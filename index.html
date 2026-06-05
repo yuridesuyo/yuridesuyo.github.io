@@ -4,17 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ユーリー | 配信者ポートフォリオ</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header>
     <nav class="nav">
       <div class="logo">YURI / USERLY</div>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#works">Works</a>
+        <a href="#media">Media</a>
         <a href="#history">History</a>
+        <a href="#life">Life</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -22,18 +25,21 @@
 
   <main>
     <section class="hero">
-      <div>
-        <div class="tag">Streamer / Talk / Outdoor Project</div>
+      <div class="hero-text">
+        <div class="tag">Streamer / Talk / Outdoor</div>
+
         <h1>配信者<br>ユーリー</h1>
+
         <p>
-          雑談、外配信、企画配信を中心に活動する男性配信者。
-          ニコ生での活動を経て、Kickなど複数プラットフォームで配信。
-          視聴者との距離感、現場感、突発的な企画力を強みにしています。
+          雑談、外配信、イベント参加を中心に活動する男性配信者。
+          ニコニコ生放送での活動をきっかけに、ネット配信ならではのライブ感と
+          視聴者との距離の近さを武器にしています。
         </p>
 
         <div class="buttons">
-      
-          <a class="button secondary" href="https://x.com/yuridayo04" target="_blank">Xを見る</a>
+          <a class="button secondary" href="https://x.com/yuridayo04" target="_blank" rel="noopener noreferrer">
+            Xを見る
+          </a>
         </div>
       </div>
 
@@ -42,12 +48,13 @@
           <div class="avatar">ゆ</div>
           <h2>Yuri</h2>
           <p>
-            ニコ生出身。雑談、外配信、イベント参加、視聴者参加型企画など、
+            ニコ生出身。雑談、外配信、イベント参加など、
             ネット配信ならではのライブ感を重視。
           </p>
         </div>
-        <p>
-          Platform:  X / NicoNico<br>
+
+        <p class="profile-meta">
+          Platform: X / NicoNico<br>
           Style: Talk, IRL, Event
         </p>
       </div>
@@ -55,7 +62,8 @@
 
     <section id="about">
       <h2 class="section-title">About</h2>
-      <div class="grid">
+
+      <div class="grid about-grid">
         <div class="card">
           <h3>雑談配信</h3>
           <p>
@@ -71,30 +79,19 @@
             台本に寄りすぎない自然な展開が特徴です。
           </p>
         </div>
-
-        <div class="card">
-          <h3>企画力</h3>
-          <p>
-            歌枠、遠征、視聴者参加型、突発企画など、場の流れを見ながら
-            コンテンツ化するスタイルを得意としています。
-          </p>
-        </div>
       </div>
 
       <div class="stats">
-        
-       
-         
         <div class="stat">
           <div class="number">32万円</div>
           <div class="label">歌枠イベント投げ銭実績</div>
         </div>
-      
       </div>
     </section>
 
     <section id="works">
       <h2 class="section-title">Works</h2>
+
       <div class="grid">
         <div class="card">
           <h3>ニコニコ超会議 出演</h3>
@@ -137,13 +134,37 @@
       </div>
     </section>
 
+    <section id="media">
+      <h2 class="section-title">Media</h2>
+
+      <div class="media-card">
+        <h3>サンスポYouTube掲載</h3>
+        <p>
+          外部メディアのYouTubeコンテンツに掲載された実績です。
+          配信活動がプラットフォーム外にも広がった代表的な記録です。
+        </p>
+
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/amafGVZH_z8?si=SXE7EdTtwcKOua97"
+            title="サンスポ掲載動画"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
     <section id="history">
       <h2 class="section-title">History</h2>
+
       <div class="timeline">
         <div class="timeline-item">
           <div class="date">NicoNico</div>
           <p>
-            ニコ生で配信活動を開始。雑談・企画・イベント参加を通じて認知を拡大。
+            ニコ生で配信活動を開始。雑談・外配信・イベント参加を通じて認知を拡大。
           </p>
         </div>
 
@@ -155,123 +176,123 @@
         </div>
 
         <div class="timeline-item">
-          <section id="media">
-  <h2 class="section-title">Media</h2>
-<section id="life">
-  <h2 class="section-title">Life Story</h2>
+          <div class="date">Media</div>
+          <p>
+            サンスポYouTube掲載など、配信プラットフォーム外での露出も経験。
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <div class="life-intro">
-    <p>
-      おおまかな人生の流れ
-  
-    </p>
-  </div>
+    <section id="life">
+      <h2 class="section-title">人生年表</h2>
 
-  <div class="life-timeline">
-    <div class="life-item">
-      <div class="life-year">2003</div>
-      <div class="life-content">
-        <h3>誕生</h3>
+      <div class="life-intro">
         <p>
-          2003年生まれ。のちにネット配信という表現の場に出会うことになる。
+          配信者ユーリーができるまでの年表。
+          成功者の綺麗なプロフィールではなく、いじめ、逃避、停滞、空回りの末に
+          ニコニコ生放送へ流れ着いた人間の記録です。
         </p>
       </div>
-    </div>
 
-    <div class="life-item">
-      <div class="life-year">小学校時代</div>
-      <div class="life-content">
-        <h3>空気が読めず、いじめを経験</h3>
-        <p>
-          周囲との距離感がうまくつかめず、学校生活で孤立やいじめを経験。
-          
-        </p>
+      <div class="life-timeline">
+        <div class="life-item">
+          <div class="life-year">2003</div>
+
+          <div class="life-content">
+            <h3>誕生</h3>
+            <p>
+              2003年生まれ。ここから特に順風満帆ではない人生が始まる。
+            </p>
+          </div>
+        </div>
+
+        <div class="life-item">
+          <div class="life-year">小学校時代</div>
+
+          <div class="life-content">
+            <h3>空気が読めず、いじめられる</h3>
+            <p>
+              小学校時代は空気が読めず、周囲とうまく馴染めなかった。
+              結果としていじめられ、学校生活はかなりしんどいものになる。
+            </p>
+          </div>
+        </div>
+
+        <div class="life-item">
+          <div class="life-year">中学受験</div>
+
+          <div class="life-content">
+            <h3>いじめから抜け出すために中学受験</h3>
+            <p>
+              いじめから抜け出すため、中学受験に挑戦。
+              偏差値の低い私立中学にかろうじて合格する。
+            </p>
+          </div>
+        </div>
+
+        <div class="life-item">
+          <div class="life-year">中学時代</div>
+
+          <div class="life-content">
+            <h3>人生では珍しく充実した期間</h3>
+            <p>
+              中学時代は、人生では珍しく充実していた期間。
+              友だちもでき、学校生活も比較的安定していた。
+            </p>
+          </div>
+        </div>
+
+        <div class="life-item">
+          <div class="life-year">高校時代</div>
+
+          <div class="life-content">
+            <h3>コロナ禍で学習ペースが崩れる</h3>
+            <p>
+              入学当初は成績が良かったものの、コロナ禍をきっかけに勉強についていけなくなる。
+              高校3年の夏にN高へ転入した。
+            </p>
+          </div>
+        </div>
+
+        <div class="life-item">
+          <div class="life-year">浪人時代</div>
+
+          <div class="life-content">
+            <h3>短絡的な考えで二年を無駄にする</h3>
+            <p>
+              「浪人すれば自然に成績が上がるのではないか」という短絡的な考えから、
+              2年間という時間を無駄にする。
+            </p>
+          </div>
+        </div>
+
+        <div class="life-item">
+          <div class="life-year">現在</div>
+
+          <div class="life-content">
+            <h3>ニコニコ生放送との出会い</h3>
+            <p>
+              ニコニコ生放送に出会い、配信を開始。
+              自分の経験や不器用さも含めて、ネット上で表現する活動へとつながっている。
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="life-item">
-      <div class="life-year">中学受験</div>
-      <div class="life-content">
-        <h3>環境を変えるために受験</h3>
-        <p>
-          いじめから抜け出すため、中学受験に挑戦。
-        偏差値の低い私立中学にかろうじて合格する。
-        </p>
-      </div>
-    </div>
-
-    <div class="life-item">
-      <div class="life-year">中学時代</div>
-      <div class="life-content">
-        <h3>人生では珍しく充実した期間</h3>
-        <p>
-          友だちができ、学校生活も比較的安定。
-          これまでの人生の中でも、珍しく充実していた時期だった。
-        </p>
-      </div>
-    </div>
-
-    <div class="life-item">
-      <div class="life-year">高校時代</div>
-      <div class="life-content">
-        <h3>コロナ禍で学習ペースが崩れる</h3>
-        <p>
-          入学当初は成績が良かったものの、コロナ禍をきっかけに勉強についていけなくなる。
-          高校3年の夏にN高へ転入した。
-        </p>
-      </div>
-    </div>
-
-    <div class="life-item">
-      <div class="life-year">浪人時代</div>
-      <div class="life-content">
-        <h3>二年間の停滞</h3>
-        <p>
-          浪人すれば自然に成績が上がるのではないか、という単略的な考えから2年間時間を無駄にする。
-      
-        </p>
-      </div>
-    </div>
-
-    <div class="life-item">
-      <div class="life-year">現在</div>
-      <div class="life-content">
-        <h3>ニコニコ生放送との出会い</h3>
-        <p>
-          ニコニコ生放送に出会い、配信を開始。
-          自分の経験や不器用さも含めて、ネット上で表現する活動へとつながっている。
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="media-card">
-    <h3>サンスポYouTube掲載</h3>
-    <p>
-      外部メディアのYouTubeコンテンツに掲載された実績です。
-      配信活動がプラットフォーム外にも広がった代表的な記録です。
-    </p>
-
-</section>
-    <div class="video-frame">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/amafGVZH_z8?si=SXE7EdTtwcKOua97" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-
-    <p class="note">
-      
-    </p>
-  </div>
-</section>
+    </section>
 
     <section id="contact">
       <div class="contact">
         <h2 class="section-title">Contact</h2>
+
         <p>
           配信出演、コラボ、企画相談、取材などのご連絡はXのDMからお願いします。
         </p>
 
-        <div class="buttons" style="justify-content:center;">
-          <a class="button" href="https://x.com/yuridayo04" target="_blank">Xで連絡する</a>
-          <a class="button secondary" href="https://kick.com/yurikunda" target="_blank">配信ページを見る</a>
+        <div class="buttons contact-buttons">
+          <a class="button" href="https://x.com/yuridayo04" target="_blank" rel="noopener noreferrer">
+            Xで連絡する
+          </a>
         </div>
       </div>
     </section>
