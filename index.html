@@ -1,85 +1,468 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style.css" rel="stylesheet">
-    <title>黒崎のポートフォリオ</title>
-  </head>
-  <body>
-    <h1>黒崎</h1>
-    
-    <h2>About</h2>
-    <p>
-      ZEN大学一年生の黒崎と申します。<br>
-      特にしたいことはないですが、お金持ちになりたいです。
-    </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ユーリー | 配信者ポートフォリオ</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <h3>Profile</h3>
-    <ul>
-      <li>黒崎</li>
-      <li>愛知県</li>
-      <li>文学や映画</li>
-    </ul>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f1117;
+      color: #f5f5f5;
+      line-height: 1.8;
+    }
 
-    <h3>Skills</h3>
-    <table>
-      <tr>
-        <th>OS</th>
-        <td>Windows, Ubuntu など</td>
-      </tr>
-      <tr>
-        <th>Engine, Frameworks</th>
-        <td>Node.js, Express など</td>
-      </tr>
-      <tr>
-        <th>Tool, MiddleWare</th>
-        <td>Git, PostgreSQL など</td>
-      </tr>
-      <tr>
-        <th>資格・免許</th>
-        <td>情報処理技術者、乙四</td>
-      </tr>
-    </table>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    <h3>Works</h3>
-    <p>アピールできる活動内容を書きましょう。</p>
-    <ul>
-      <li><a href="https://github.com/">GitHub</a></li>
-      <li><a href="https://qiita.com/">Qiita</a></li>
-      <li><a href="https://zenn.dev/">Zenn</a></li>
-      <li>
-        作った作品
-        <ul>
-          <li><a href="https://example.com/">作品 1</a></li>
-          <li><a href="https://example.com/">作品 2</a></li>
-        </ul>
-      </li>
-    </ul>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 17, 23, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-    <h3>Contact</h3>
-    <p>連絡先や SNS のアカウントを書きましょう。</p>
-    <ul>
-      <li><a href="mailto:name@example.com">Mail</a></li>
-      <li><a href="https://twitter.com/n_yobikou">X(旧 Twitter)</a></li>
-      <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
-    </ul>
+    .nav {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    <h3>History</h3>
-    <p>学歴、職歴、アルバイト、インターン経験など。</p>
-    <table>
-      <tr>
-        <th>2019 年</th>
-        <td><a href="https://dwango.co.jp/">株式会社ドワンゴ</a> 入社</td>
-      </tr>
-      <tr>
-        <th>2018 年</th>
-        <td>学校法人角川ドワンゴ学園 <a href="https://nnn.ed.jp/">N高等学校</a> 卒業</td>
-      </tr>
-      <tr>
-        <th>20XX 年</th>
-        <td>表彰、受賞歴、メディア掲載記事などあれば</td>
-      </tr>
-    </table>
-  </body>
+    .logo {
+      letter-spacing: 0.08em;
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: #cfcfcf;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 90px 24px 70px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      color: #cfcfcf;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 24px;
+      letter-spacing: -0.05em;
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      max-width: 620px;
+      font-size: 17px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 14px;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .profile-card {
+      background: linear-gradient(145deg, #1c2030, #12141c);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 28px;
+      padding: 28px;
+      min-height: 340px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c5cff, #00d4ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      margin-bottom: 24px;
+    }
+
+    .profile-card p {
+      color: #cfcfcf;
+      font-size: 14px;
+    }
+
+    section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 28px;
+      letter-spacing: -0.03em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #171a23;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 24px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #cfcfcf;
+      font-size: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      background: #171a23;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .stat .number {
+      font-size: 30px;
+      line-height: 1.2;
+    }
+
+    .stat .label {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid rgba(255,255,255,0.22);
+      padding-left: 18px;
+    }
+
+    .timeline-item .date {
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item p {
+      color: #cfcfcf;
+      font-size: 15px;
+    }
+
+    .contact {
+      background: linear-gradient(145deg, #202538, #151822);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 28px;
+      padding: 36px;
+      text-align: center;
+    }
+
+    .contact p {
+      color: #cfcfcf;
+      margin: 12px auto 0;
+      max-width: 620px;
+    }
+
+    footer {
+      padding: 40px 24px;
+      text-align: center;
+      color: #888;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 64px;
+      }
+
+      .grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">YURI / USERLY</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#works">Works</a>
+        <a href="#history">History</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="tag">Streamer / Talk / Outdoor Project</div>
+        <h1>配信者<br>ユーリー</h1>
+        <p>
+          雑談、外配信、企画配信を中心に活動する男性配信者。
+          ニコ生での活動を経て、Kickなど複数プラットフォームで配信。
+          視聴者との距離感、現場感、突発的な企画力を強みにしています。
+        </p>
+
+        <div class="buttons">
+          <a class="button" href="https://kick.com/yurikunda" target="_blank">Kickを見る</a>
+          <a class="button secondary" href="https://x.com/yuridayo04" target="_blank">Xを見る</a>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div>
+          <div class="avatar">ゆ</div>
+          <h2>Yuri</h2>
+          <p>
+            ニコ生出身。雑談、外配信、イベント参加、視聴者参加型企画など、
+            ネット配信ならではのライブ感を重視。
+          </p>
+        </div>
+        <p>
+          Platform: Kick / X / NicoNico<br>
+          Style: Talk, IRL, Event
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>雑談配信</h3>
+          <p>
+            日常、時事、ネット文化、配信界隈の話題などを扱うトーク中心の配信。
+            視聴者コメントとの掛け合いを重視しています。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>外配信</h3>
+          <p>
+            街歩き、イベント、遠征など、現場の空気をそのまま届ける配信。
+            台本に寄りすぎない自然な展開が特徴です。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>企画力</h3>
+          <p>
+            歌枠、遠征、視聴者参加型、突発企画など、場の流れを見ながら
+            コンテンツ化するスタイルを得意としています。
+          </p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="number">9ヶ月</div>
+          <div class="label">ニコ生での活動実績</div>
+        </div>
+        <div class="stat">
+          <div class="number">32万円</div>
+          <div class="label">歌枠イベント投げ銭実績</div>
+        </div>
+        <div class="stat">
+          <div class="number">19万</div>
+          <div class="label">切り抜きインプレッション</div>
+        </div>
+        <div class="stat">
+          <div class="number">1,800+</div>
+          <div class="label">Kickフォロワー目安</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works">
+      <h2 class="section-title">Works</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>ニコニコ超会議 出演</h3>
+          <p>
+            配信活動を通じてオファーを受け、イベント出演を経験。
+            オンライン配信からリアルイベントへ活動範囲を広げました。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>新人特集枠 掲載</h3>
+          <p>
+            配信プラットフォーム上の新人特集枠に選出。
+            初期活動期から一定の注目を集めました。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>歌枠イベント 入賞</h3>
+          <p>
+            夏の歌枠イベントで投げ銭約32万円を記録し、公式出演につながる成果を残しました。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>サンスポYouTube 掲載</h3>
+          <p>
+            外部メディアのYouTubeコンテンツに掲載。
+            配信外での露出実績もあります。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>富士山配信</h3>
+          <p>
+            遠征型・現場型コンテンツとして富士山関連の配信を実施。
+            外配信の代表的な実績のひとつです。
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>切り抜き拡散</h3>
+          <p>
+            切り抜き動画で約19万インプレッションを記録。
+            短尺コンテンツとの相性も示しました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="history">
+      <h2 class="section-title">History</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="date">NicoNico</div>
+          <p>
+            ニコ生で配信活動を開始。雑談・企画・イベント参加を通じて認知を拡大。
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">Event</div>
+          <p>
+            新人特集枠、歌枠イベント、公式出演など、プラットフォーム内イベントで実績を積む。
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">Media</div>
+          <p>
+            サンスポYouTube掲載、切り抜き拡散など、配信外の接点も増加。
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="date">Kick</div>
+          <p>
+            Kickに活動拠点を拡張。雑談・外配信を軸に新しい視聴者層へ展開。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>
+          配信出演、コラボ、企画相談、取材などのご連絡はXのDMからお願いします。
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+          <a class="button" href="https://x.com/yuridayo04" target="_blank">Xで連絡する</a>
+          <a class="button secondary" href="https://kick.com/yurikunda" target="_blank">配信ページを見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Yuri. All Rights Reserved.
+  </footer>
+</body>
 </html>
