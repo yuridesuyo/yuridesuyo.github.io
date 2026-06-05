@@ -152,6 +152,10 @@ h1 {
   font-size: 14px;
 }
 
+.profile-meta {
+  margin-top: 24px;
+}
+
 section {
   max-width: 1080px;
   margin: 0 auto;
@@ -168,6 +172,10 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+}
+
+.about-grid {
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .card {
@@ -195,7 +203,7 @@ section {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: minmax(220px, 320px);
   gap: 14px;
   margin-top: 22px;
 }
@@ -218,100 +226,6 @@ section {
   margin-top: 6px;
 }
 
-.timeline {
-  display: grid;
-  gap: 16px;
-}
-
-.timeline-item {
-  border-left: 2px solid rgba(255, 255, 255, 0.22);
-  padding-left: 18px;
-}
-
-.timeline-item .date {
-  color: #aaa;
-  font-size: 13px;
-  margin-bottom: 4px;
-}
-
-.timeline-item p {
-  color: #cfcfcf;
-  font-size: 15px;
-}
-
-.contact {
-  background: linear-gradient(145deg, #202538, #151822);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 28px;
-  padding: 36px;
-  text-align: center;
-}
-
-.contact p {
-  color: #cfcfcf;
-  margin: 12px auto 0;
-  max-width: 620px;
-}
-
-.contact .buttons {
-  justify-content: center;
-}
-
-footer {
-  padding: 40px 24px;
-  text-align: center;
-  color: #888;
-  font-size: 13px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-@media (max-width: 800px) {
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 64px;
-  }
-
-  .grid,
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .nav {
-    align-items: flex-start;
-    gap: 12px;
-    flex-direction: column;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-  }
-
-  h1 {
-    font-size: 44px;
-  }
-
-  section {
-    padding: 52px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 48px 20px 56px;
-  }
-
-  .profile-card {
-    min-height: auto;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-
-  .button {
-    text-align: center;
-  }
-}
 .media-card {
   background: #171a23;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -336,7 +250,7 @@ footer {
   margin-top: 20px;
   overflow: hidden;
   border-radius: 18px;
-  background: #000;
+  background: #000000;
 }
 
 .video-frame iframe {
@@ -345,8 +259,147 @@ footer {
   display: block;
 }
 
-.note {
-  margin-top: 12px;
-  color: #888 !important;
-  font-size: 12px !important;
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.timeline-item {
+  border-left: 2px solid rgba(255, 255, 255, 0.22);
+  padding-left: 18px;
+}
+
+.timeline-item .date {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.timeline-item p {
+  color: #cfcfcf;
+  font-size: 15px;
+}
+
+.life-intro {
+  max-width: 760px;
+  color: #cfcfcf;
+  margin-bottom: 34px;
+}
+
+.life-timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.life-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 22px;
+  background: #171a23;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.life-year {
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.life-content h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.life-content p {
+  color: #cfcfcf;
+  font-size: 14px;
+}
+
+.contact {
+  background: linear-gradient(145deg, #202538, #151822);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 36px;
+  text-align: center;
+}
+
+.contact p {
+  color: #cfcfcf;
+  margin: 12px auto 0;
+  max-width: 620px;
+}
+
+.contact-buttons {
+  justify-content: center;
+}
+
+footer {
+  padding: 40px 24px;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 800px) {
+  .nav {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 64px;
+  }
+
+  .grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .life-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .life-year {
+    color: #aaa;
+  }
+
+  section {
+    padding: 52px 20px;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 48px 20px 56px;
+  }
+
+  .profile-card {
+    min-height: auto;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    text-align: center;
+  }
 }
